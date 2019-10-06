@@ -1,0 +1,7 @@
+User-agent: Yandex
+Allow: /
+Sitemap: https://mosroses.ru/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Sitemap: https://mosroses.ru/sitemap.xml
