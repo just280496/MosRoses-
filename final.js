@@ -19,6 +19,7 @@ $('body').css({position:'relative', overflow:''});}
 });
 
 $('.headerBasket').click(function(){
+showBasketSum();
 
 $('.menu2').animate({height:[ 'toggle', 'swing' ]},300);
 if($('.headerMenu').css('display') == 'block'){
@@ -58,36 +59,9 @@ $('body').css({position:'relative', overflow:''});
 
 
 
-slideIt();
-let slidePosition = 0;
-function slideIt(){
-$('.lineSlider').swipe({
-swipe:function(event, direction, phase) {
-if(direction =='left'){
-for(i = 0; i < 1; i++){
-if(slidePosition == -300){return false;} 
-else{slidePosition-=100;
-$('.lineSlider').animate({left:slidePosition+'%'},300,'swing');}}}
-if(direction =='right' ){
-for(i = 0; i < 1; i++){
-if(slidePosition == 0){return false;} 
-slidePosition+=100;
-$('.lineSlider').animate({left:slidePosition+'%'},300,'swing');}}
-activeX();}});}
 
-activeX();
-function activeX(){
-if(slidePosition == 0){$('#active1').css('background-color', 'rgba(0, 0, 0, 0.45)');
-$('#active2, #active3, #active4').css('background-color', 'rgba(0, 0, 0, 0.2)');}
-if(slidePosition == -100){$('#active2').css('background-color', 'rgba(0, 0, 0, 0.45)');
-$('#active1, #active3, #active4').css('background-color', 'rgba(0, 0, 0, 0.2)');}
-if(slidePosition == -200){$('#active3').css('background-color', 'rgba(0, 0, 0, 0.45)');
-$('#active1, #active2, #active4').css('background-color', 'rgba(0, 0, 0, 0.2)');}
-if(slidePosition == -300){$('#active4').css('background-color', 'rgba(0, 0, 0, 0.45)');
-$('#active2, #active3, #active1').css('background-color', 'rgba(0, 0, 0, 0.2)');}
-}
 
-function closeBouq(){
+function closeBouq(event){
 event.stopPropagation();
 $(this).parent().css({position:'relative',width:'50%',height:'50%',zIndex:'1'});
 $(this).css('display','none');
@@ -99,8 +73,8 @@ $('.name').css({fontSize:'2.7vh', marginLeft:'10%'});
 $('.selectbouq').prop('selectedIndex', 0);
 $('.addbutton').css('display','none');
 }
-function openBouq(){
-    
+function openBouq(event){
+event.stopPropagation();
 if($(this).css('position')=='relative'){
 $(this).animate({ height:'100%',top:'0',left:'0'},300,'swing').css({position:'fixed',width:'100%',zIndex:'9999'});
 $('.x',this).css('display','block');
@@ -112,9 +86,60 @@ $('.name',this).css({fontSize:'3vh', marginLeft:'5%'});
 $('.addbutton',this).css('display','block');}
 }
 function clearFreeSelect(){$('select option:contains(" см.  руб.")').remove();}
-function clearFreeQuantity(){
-if($('.quantity').text() == '' )    $('.quantity').css('display','none');
-else  $('.quantity').css('display','block');
+function checkFreeQuantity(){if($('.quantity').text() == '' ) $('.quantity').css('display','none');
+else $('.quantity').css('display','block');}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+slideIt();
+let slidePosition = 0;
+function slideIt(){
+$('.lineSlider').swipe({
+swipe:function(event, direction, phase) {
+if(direction =='left'){
+    if(slidePosition == -400)
+    return false;
+else{slidePosition-=100;
+    $('.lineSlider').animate({left:slidePosition+'%'},300,'swing');}}
+if(direction =='right' ){
+    if(slidePosition == 0)
+    return false; 
+slidePosition+=100;
+$('.lineSlider').animate({left:slidePosition+'%'},300,'swing');}
+activeX();}});}
+
+activeX();
+function activeX(){
+if(slidePosition == 0){$('#active1').css('background-color', 'rgba(0, 0, 0, 0.45)');
+$('#active2, #active3, #active4, #active5').css('background-color', 'rgba(0, 0, 0, 0.2)');}
+if(slidePosition == -100){$('#active2').css('background-color', 'rgba(0, 0, 0, 0.45)');
+$('#active1, #active3, #active4, #active5').css('background-color', 'rgba(0, 0, 0, 0.2)');}
+if(slidePosition == -200){$('#active3').css('background-color', 'rgba(0, 0, 0, 0.45)');
+$('#active1, #active2, #active4, #active5').css('background-color', 'rgba(0, 0, 0, 0.2)');}
+if(slidePosition == -300){$('#active4').css('background-color', 'rgba(0, 0, 0, 0.45)');
+$('#active2, #active3, #active1, #active5').css('background-color', 'rgba(0, 0, 0, 0.2)');}
+if(slidePosition == -400){$('#active5').css('background-color', 'rgba(0, 0, 0, 0.45)');
+$('#active2, #active3, #active1, #active4').css('background-color', 'rgba(0, 0, 0, 0.2)');}
 }
