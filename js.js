@@ -1,6 +1,7 @@
 let basket = {};
 let sum = Number(0);
 let itemsQuantity = 0;
+let bouqOnPage = 5;
 $(document).ready(function(){
 loadBouq();
 checkBasket();
@@ -8,29 +9,57 @@ loadBasket();
 getQuantity();
 checkFreeQuantity();
 $('body').on('click','.clearBasket',clearBasket);
-
-
-
+$('body').on('click','#slide2',loadBouq2);
 });
+
+function loadBouq2(){
+    bouqOnPage+=4;
+    loadBouq();
+}
+
+
+
+
+var windowHeight = $(window).height();
+ 
+	$(document).on('scroll', function() {
+		$('.bouqet:last').each(function() {
+			var self = $(this),
+			height = self.offset().top + self.height();
+			if ($(document).scrollTop() + windowHeight >= height) {
+                if(bouqOnPage == 9) return;
+				loadBouq2();
+			}
+		});
+	});
+
+
+
+
+
+
+
+
+
 
 function loadBouq(){
 $.getJSON("bouq.json", function(data){
 let out = '';
 for(let key in data){
+    if(key <= bouqOnPage){
 out+='<div class="bouqet"><p class="mosroses">MosRoses</p><div class="x"></div>';
-
 out+='<div class="image" style="background-image:url('+data[key]['img']+');"></div>';
 out+='<p class="name">'+data[key]['name']+'</p>';
 out+='<select class="selectbouq"><option selected disabled>ВЫБЕРИТЕ РАЗМЕР ЦВЕТКА</option><option getPrice="'+ data[key]['price1'] +'" class="option2">'+data[key]['size1']+' см. '+ data[key]['price1'] +' руб.'+'</option><option getPrice="'+data[key]['price2']+'"class="option2">'+data[key]['size2']+' см. '+data[key]['price2']+' руб.'+'</option><option getPrice="'+data[key]['price3']+'" class="option2">'+data[key]['size3']+' см. '+data[key]['price3']+' руб.'+'</option></select>';
 out+='<div class = "addbutton" getImage="'+data[key]['img']+'"addName="'+data[key]['name']+'"></div>';
 out+='<p class="price">от '+data[key]['price1']+' руб.</p>';
-out+='</div>';}
+out+='</div>';
+console.log(key);}}
 $('main').html(out);
 $('body').on('click','.bouqet',openBouq);
 $('body').on('click','.x',closeBouq);
 $('body').on('click','.addbutton',addToBasket);
 
-clearFreeSelect();
 });}
 
 

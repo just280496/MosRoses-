@@ -84,6 +84,7 @@ $('.price',this).css('display','none');
 $('.image',this).css({margin:'50px auto 0', width:'75%',height:'50%'});
 $('.name',this).css({fontSize:'3vh', marginLeft:'5%'});
 $('.addbutton',this).css('display','block');}
+clearFreeSelect();
 }
 function clearFreeSelect(){$('select option:contains(" см.  руб.")').remove();}
 function checkFreeQuantity(){if($('.quantity').text() == '' ) $('.quantity').css('display','none');

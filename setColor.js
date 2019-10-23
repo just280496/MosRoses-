@@ -25,15 +25,6 @@ function openSliderForColor(){
 }
 
 
-
-
-
-
-
-
-
-
-
 let slidePositionColor = 0;
 function slideColor(){
 $('.lineColorSlider').swipe({
