@@ -1,0 +1,38 @@
+{
+    "1": {
+        "name": "51 КРАСНАЯ РОЗА",
+        "price": [100, 200, 300],
+        "size": [50, 60, 70],
+        "img": "'img/red.png'",
+        "color": "red"
+    },
+    "2": {
+        "name": "51 БЕЛАЯ РОЗА5",
+        "price": [400, 500, 600],
+        "size": [80, 90, 100],
+        "img": "'img/white.png'",
+        "color": "white"
+    },
+    "3": {
+        "name": "51 красная РОЗА4",
+        "price": [400],
+        "size": [80],
+        "img": "'img/red.png'",
+        "color": "white"
+    },
+    "4": {
+        "name": "51 БЕЛАЯ РОЗА3",
+        "price": [400, 500, 600],
+        "size": [80, 90, 100],
+        "img": "'img/white.png'",
+        "color": "white"
+    },
+    "5": {
+        "name": "51 БЕЛАЯ РОЗА2",
+        "price": [400],
+        "size": [70],
+        "img": "'img/white.png'",
+        "color": "white"
+    }
+
+}

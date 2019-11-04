@@ -1,0 +1,37 @@
+@font-face{font-family:Lato;src:url(font/Lato.ttf);}
+body{margin: 0;font-family: Lato;}
+
+
+/********КОРЗИНА, ИЗБРАННОЕ, МЕНЮ*********/
+.basket{ height:100vh; width:100%;background-color: white;}
+.favorite{ height:100vh; width:100%;background-color: white;display: none;}
+
+/********КОРЗИНА*********/
+.order{font-size: 5vh; text-align: center;margin-top:5%;}
+.basketBox{width: 100%;height: 15%;position: relative;}
+.basketImg{width: 25%;height: 90%;background-size: contain;float: left;background-position: center;background-repeat: no-repeat;}
+.basketName{margin: 0 0 0 25%;height: 25%;font-size: 3vh;width: 65%;position: relative;}
+.basketPrice{margin: 0 0 0 25%;height: 20%;font-size: 2.5vh;}
+.deleteFromBasket{width: 10%;height:30%;position: absolute;top:0;right: 0;cursor: pointer;background-image: url(icon/x.svg);background-size: 30%;background-repeat: no-repeat;background-position: center;}
+.minus, .basketCount, .plus{width: 20px;height: 30%;float: left;cursor: pointer;display: flex;}
+.minus p, .basketCount p, .plus p {margin: auto;font-size: 4vh;}
+.basketCount{cursor: default;}
+.clearBasket{cursor: pointer;width: 100%;text-align: right;}
+.basketCount p{font-size: 2.5vh;}
+.basketCount{width: 35px;}
+.freeBasket{font-size: 5vh;text-align: center;}
+
+/********ИЗБРАННОЕ*********/
+.fav, .freeFavorite{width: 100%;font-size: 4vh;text-align: center;}
+
+.favBox{width: 100%;height: 15%;position: relative;}
+.favImg{width: 35%;height: 80%;background-size: contain;float: left;background-position: center;background-repeat: no-repeat;}
+.deleteFromFavorite{width: 10%;height:30%;position: absolute;top:0;right: 0;cursor: pointer;background-image: url(icon/x.svg);background-size: 30%;background-repeat: no-repeat;background-position: center;}
+favoriteCount{cursor: default;}
+.clearFavorite{cursor: pointer;}
+.favName{font-size: 3vh;}
+.favPrice{font-size: 2vh;margin: 0;}
+
+/********КНОПКИ*********/
+.addButton{width: 20%; height: 50px;background-color: aqua;}
+.like{width: 20%; height: 50px;background-color: aqua;}
