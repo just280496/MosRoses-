@@ -41,34 +41,35 @@ function outBasket(){
         }
         
         out += '<div class="sum">Итого: ' + sum + '</div>';
-        out += '<div class="countBasket">' + count + '</div>';
-        out += '<p class="clearBasket">Удалить все</p>';
-        
+        out += '<div class="clearBasket">Удалить все</div>';
+        out += '<br><hr>';
         out += '<p class="freeBasket">Заказ пуст</p>';
 
     out += '<form action="send.php" method="post">'
     out += '<input type="hidden" name="order" value="'
     for (let i in basket){
-    out += basket[i] + ' x ' + data[i[0]]['name'] + ' Цена: ' + data[i[0]]['price'][i[1]] + ' руб "\r\n"';
+    out += basket[i] + ' x ' + data[i[0]]['name'] + ' Цена: ' + data[i[0]]['price'][i[1]] + ' руб || ';
     }
     out += 'Итого: '+sum+'">';
-    out += 'Ваше имя <input type="text" name="first_name" required><br>'
-    out += 'Email: <input type="text" name="email" required><br>' 
-    out += 'Номер телефона: <input type="text" name="phone" required><br>'
-    out += 'Сообщение:<br><textarea rows="5" name="message" cols="30"></textarea><br>'
-    out += '<input type="submit" name="submit" value="Отправить">'
+    out += '<p class="textInp firstInp">Ваше имя:</p> <input type="name" name="first_name" required class="inputName">'
+    out += '<p class="textInp">Email:</p> <input type="email" name="email" required class="inputEmail">' 
+    out += '<p class="textInp">Номер телефона:</p> <input type="tel" name="phone" required class="inputPhone">'
+    out += '<p class="textInp">Сообщение:</p><br><textarea rows="5" name="message" class="inputMessage"></textarea>'
+    out += '<input type="submit" name="submit" value="Отправить" class="inputButton">'
     out += '</form>'
 
         $('.basket').html(out);
         
         if(count == 0){
-            $('.countBasket, .clearBasket, .sum, .order').css('display', 'none');
+            $('.countBasket, .clearBasket, .sum, .order, form, .basCount').css('display', 'none');
             $('.freeBasket').css('display', 'block');
         }
         else{
-            $('.countBasket, .clearBasket, .sum, .order').css('display', 'block');
+            $('.countBasket, .clearBasket, .sum, .order, form, .basCount').css('display', 'block');
             $('.freeBasket').css('display', 'none');
         }
+
+        $('.basCount').text(count);
     });
 }
 
@@ -88,8 +89,8 @@ function minus(){
 function deleteFromBasket(){
     var art = $(this).attr('id');
     delete basket[art];
-    outBasket();
     localStorage.setItem('basket', JSON.stringify(basket));
+    outBasket();
 }
 
 
