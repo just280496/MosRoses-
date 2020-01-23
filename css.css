@@ -1,0 +1,178 @@
+@font-face{font-family:Lato;src:url(fonts/lato.ttf);}
+*{margin: 0;padding: 0;}
+a{text-decoration: none;color: black;}
+html, body{width:100vw;position: relative;overflow-x: hidden;font-family: lato;-moz-user-select: none;-ms-user-select: none;-khtml-user-select: none;-webkit-user-select: none;-webkit-touch-callout: none;user-select: none;-webkit-tap-highlight-color: rgba(255, 255, 255, 0);}
+#mosroses p, .headerBlock p, .catnamepage, .bouqsname, .bouqsprice, nav p{
+    background: linear-gradient(to right, rgb(35, 7, 77), rgb(204, 83, 51));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+header{width: 100vw;height:15vh;z-index: 2;position: fixed;top: 0;background-color: rgba(255, 255, 255,0.95);backdrop-filter: blur(10px);}
+#mosroses{font-weight: 100;display: flex;width: 15vw;height: 100%;float: left;}
+#mosroses p{font-size: calc(2.5vw + 0.5vh);font-weight: 100;margin: auto;transition: letter-spacing .3s ease-out;}
+#mosroses p:hover{font-weight: 200;cursor: pointer;letter-spacing: 2px;}
+#hr1{position: absolute;bottom: 0;width: 13vw;left: 1vw;border-top: none;border: 0.5px solid rgba(0, 0, 0, 0.1);}
+nav{width: 15vw;height: calc(100% - 15vh);position: fixed;margin-top: 15vh;display: block;background-color: rgba(255,255,255,0.95);}
+nav p{margin: 2vw 1vw;font-size: calc(1vw + 0.5vh);transition: letter-spacing .3s ease-out;}
+nav p:hover, nav p:active{cursor: pointer;letter-spacing: 2px;}
+
+
+nav p:hover:after,nav p:focus:after, #headerBlock3 p:hover:after {width: 90%;}
+.headerBlock{width: 28.3333vw;height: 100%;float: left;display: flex;}
+.headerBlock p{width: 50%;margin: auto;text-align: left;font-size: calc(1vw + 0.5vh);}
+/* #headerBlock1{background-color: rgb(230, 200, 230);}
+#headerBlock2{background-color: rgb(230, 200, 200);}
+#headerBlock3{background-color: rgb(230, 200, 170);} */
+#headerBlock3 p{cursor: pointer;}
+#menuButton{display: none;}
+#cartButton{width: 10%;height: 25%;margin: auto;background-image: url(icon/cart.svg);background-size: contain;background-repeat: no-repeat;background-size: 70%;background-position: center;}
+#favoriteButton{width: 10%;height: 25%;margin: auto;background-image: url(icon/likemenu.svg);background-size: contain;background-repeat: no-repeat;background-size: 70%;background-position: center;}
+
+main{width: 85vw;margin: 15vh 0 5vw 15vw;float: right;}
+
+.owl-carousel{z-index:1;width: 99%;float: left;margin: 0 0 50px 0;height: calc(82vw/3);position: relative;cursor: pointer;opacity: 1;}
+.owl-item, .owl-stage-outer, .owl-stage{height: 100%;z-index:1;}
+.owl-item div{width:100%;height: 100%;background-size: cover;background-position: center;background-repeat: no-repeat;}
+.owl-item #id2{background-image: url('img/download1.jpg')}
+.owl-item #id1{background-image: url('img/download1.jpg')}
+#bouqSlider{width: 33vw;height: 33vw;}
+.bouqSlide{background-size: contain;}
+.bouqname{}
+
+.mainBlock{width: calc(82vw/3);height: calc(82vw/3);float: left;margin: 3vw 1vw 1vw 0;cursor: pointer;background-size: cover;background-position: center;background-repeat: no-repeat;position: relative;opacity: 1;}
+.mainBlock:hover{box-shadow: 0 3px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.2);
+ transition: all .3s ease-out;}
+
+#mainBlock1{background-color: rgb(230, 200, 200);}
+#mainBlock2{background-color: rgb(230, 170, 170);}
+#mainBlock3{background-color: rgb(200, 170, 200);}
+#mainBlock4{background-color: rgb(170, 170, 170);}
+#mainBlock5{background-color: rgb(140, 170, 140);}
+#mainBlock6{background-color: rgb(140, 110, 110);}
+footer{height: 15vh;width: 100vw;}
+
+#roundbox{background-image: url('img/roundbox.JPG');}
+#film{background-image: url('img/film.JPG');}
+#bride{background-image: url('img/bride.JPG');}
+#craft{background-image: url('img/IMG_0883.JPG');}
+.bouquets{width: calc(82vw/3);height: calc(82vw/2.5);float: left;margin: 1vw 1vw 1vw 0;cursor: pointer;position: relative;}
+.bouqsimg{width: calc(82vw/3);height: calc(82vw/3);background-size: contain;background-position: center;background-repeat: no-repeat;}
+.bouqsname{font-size: calc(1vh + 0.5vw);}
+.bouqsprice{font-weight: bold;font-size: calc(1vh + 0.5vw);}
+.like{width: 3vw;height: 2.5vw;position: absolute;top:23.33vw;background-image: url(icon/like.svg);background-position:center;background-repeat: no-repeat;background-size: 2vw;background-color: rgba(255, 155, 162, 0.568);border-top-left-radius: 0.5vw;border-bottom-left-radius: 0.5vw;opacity: 0;right: 0;}
+
+
+.catname{width: 100%;height: 3vw;position: absolute;top: -3vw; 
+    font-size: 2vw;
+    width: 100%;
+    text-align: center;}
+
+.bouquets:hover .like{opacity: 1;transition: .3s;}
+
+.catnamepage{text-align: center;width: 100%;font-size: 5vh;}
+
+.cart{
+    overflow:scroll;position:fixed;width: 100%;height: 100%;margin: 15vh 0 5vw 15vw;display: none;background-color: wheat;z-index: 10;
+}
+.shadowModal{width: 100%;height: 100vh;background-color: rgba(0, 0, 0, 0.3);z-index: 9999;position: fixed;top:0;}
+.messageModal{width: 90%;height: 20%;background-color: white;display: flex;margin:60% 5%;z-index: 9999;border-radius: 10px;position: relative;}
+.messageModal p{margin:auto;font-size: 3.5vh;}
+
+
+.favorite{
+    overflow:scroll;position:fixed;width: 100%;height: 100%;margin: 15vh 0 5vw 15vw;display: none;background-color: wheat;z-index: 10;
+}
+
+@media (orientation: portrait){
+
+
+
+    header{height: 50px;background-color: rgba(255, 255, 255, 0.95);backdrop-filter: none;z-index: 3;}
+    #menuButton{height: 50px;width: 15%;float: left;display: block;}
+    #mosroses{display: flex;width: 55%;height: 100%;float: left;}
+    #mosroses p{font-size: calc(10vw);transition: none;}
+    #mosroses p:hover{letter-spacing: 0;}
+    #headerBlock1, #headerBlock2{display: none;}
+    #headerBlock3{width: 30%;float: right;}
+    #favoriteButton{width: 50%;height:50px;background-size: 50%;}
+    #cartButton{width: 50%;height:50px;background-size: 60%;}
+    main{width: 100%;margin: 50px 0;padding-bottom: 5%;overflow-y: scroll;}
+    .owl-carousel{width: 100vw;float: left;margin:0 0 5vh 0;height: 100vw;position: relative;cursor: pointer;}
+    #mainBlock1{margin-top: 8vw;}
+    .mainBlock{width: 100vw;height: 100vw;margin-top:7vh;background-size: 100%;}
+    .mainBlock:hover{box-shadow: none;}
+    .catname{height: 5vh;text-align: center;font-size: 4vh;margin-top: -4vh;
+    }
+    .catnamepage{text-align: center;width: 100%;font-size: 7vw;margin: 3vh auto;}
+    .owl-next, .owl-prev{background: none!important;font-size: 17vw;opacity: 1;}
+    .owl-item #id2{background-image: url('img/roundbox.JPG')}
+    .owl-item #id1{background-image: url('img/roundbox2.JPG')}
+    header hr{display: none;}
+    nav{display: none; width: 100%;background-color: rgba(255,255,255,0.95); z-index: 2;margin-top: 50px;height: 100vh;padding-top: 5vw;}
+    nav p{margin: 3vh;font-size: calc(2vh + 2vw);text-align: center;display: none;}
+    nav p:hover:after,nav p:focus:after, #headerBlock3 p:hover:after {width: 100%;}
+    .headerBlock p{display: none;}
+    .iconMenuLine {transform-origin: 50% 50%;transition: transform .25s;}
+    .lineBottomRotate {transform: translateY(-3px) rotate(45deg);}
+    .lineTopRotate {transform: translateY(2px) rotate(-45deg);}
+    .menuIcon{width:60%;height:50px;margin-left: 20%;}
+
+    .bouquets{width: 100vw;height: 100vw;margin: 0;}
+    .bouqsimg{width: 100vw;height: 80vw;background-size: contain;background-position: center;background-repeat: no-repeat;}
+    .bouqsname{font-size: calc(2vh + 1vw);text-align: center;}
+    .bouqsprice{font-weight: bold;font-size: calc(2vh + 1vw);text-align: center;}
+    #bouqSlider{width:90vw;height: 90vw;margin: 5vw;}
+    .like{width: 15vw;height: 15vw;position: absolute;top:65vw;background-image: url(icon/like.svg);background-position:center;background-repeat: no-repeat;background-size: 4vh;background-color: rgba(255, 155, 162, 0.75);border-top-left-radius: 3.5vw;border-bottom-left-radius: 3.5vw;opacity: 0;right: 10vw;}
+    .likeOnBouq{position: relative;height: 10vw;opacity: 1;top: auto;right: auto;float: right; background-color: rgba(255, 255, 255, 0);background-position-x: left;border-radius: 0;background-size: contain;}
+    /********КОРЗИНА*********/
+.cart    {overflow:scroll;position:fixed;width: 100%;height: 100vh;margin:0;display: none;background-color: white;z-index: 2;top:50px}
+.bigImg{width: 98vw;height: 98vw;margin: 0 auto;background-size: contain;background-repeat: no-repeat;}
+.smallImg{float: left;width: 23vw;height: 23vw;background-size: contain;background-position: center;margin: 2.5vw 1vw 5vw;}
+.smallImgActive{box-shadow: -20px 20px 0 -17px #eee,20px -20px 0 -17px #eee,20px 20px 0 -20px #000000,0 0 0 2px #000000;}
+.addButton{width: 45vw; height: 10vw;margin-left: 5vw;border: 0.5px solid black;display: flex;}
+.addButton p{margin: auto;font-size: calc(3vw+1vh);font-weight: bold;}
+.hrBouq{width: 90vw;border: 0.9px solid rgb(226,226,226);border-top: none;margin: 5px auto 5vw;}
+.bouqname{font-size: 6vw;margin: 0 5vw;text-transform: uppercase;}
+.bouqprice{font-size: 5vw;margin: 2.5vw 5vw;font-weight: bold;}
+.descr{margin: 5vw 5vw 2.5vw;}
+.descrText{width: 90vw;margin:0 auto;}
+.order{width: 98%;font-size: 4vh;margin: 1% 2%;letter-spacing: 10px;}
+.freeBasket{width: 100%;height:100%;font-size: 9vw;text-align: center;margin: 50% 0;}
+.basketBox{width: 100%;height: 50%;position: relative;}
+.basketImg{width: 70%;height: 70%;margin:0 15%;background-size: contain;float: left;background-position: center;background-repeat: no-repeat;}
+.basketName{height: 10%;width: 100%;float: left;display: flex;} .basketName p{margin:auto;}
+.basketPrice{width:100%;height: 10%;font-size: 2.5vh;float: left;display: flex;} .basketPrice p{margin:auto;}
+.deleteFromBasket{width: 10%;height:10%;position: absolute;top:0;right: 0;cursor: pointer;background-image: url(icon/x.svg);background-size: 30%;background-repeat: no-repeat;background-position: center;}
+.hrBas{border: 0.9px solid rgba(0, 0, 0, 0.1);width: 90%;border-top: none;margin: 5px auto;}
+.countContainer{width: 30%;height: 10%;float: left;display: flex;margin-left: 35%;}
+.minus, .basketCount, .plus{width: 33%;height: 100%;float: left;cursor: pointer;margin: auto;display: flex;cursor: pointer;}
+.minus p, .basketCount p, .plus p{margin: 0 auto;font-size: 3vh;}
+.basketCount{cursor: default;}
+.sum{width: 45%;float: left;font-size: 3vh;margin-left: 5%;}
+.clearBasket{cursor: pointer;font-size: 3vh;width: 45%;text-align: right;float: left;}
+/*.inputName{margin: 10% 0 0 0;}*/
+.inputEmail,.inputName,.inputPhone,.inputMessage,.inputButton{height:6vw;outline:none;background-color: rgb(252,252,250);border: 0.5px solid rgba(0, 0, 0, 0.2);-webkit-appearance: none;-moz-appearance: none;appearance: none;border-radius: 5px;width: 60%;margin:0 0 0 20%;}
+.inputMessage{height: 24vw;}
+.firstInp{margin-top: 5%!important;}
+.textInp{margin: 0 20%;width:40%;}
+.inputButton{float: right;width: 25%;height: 30px;margin:2% 55% 50% 2%;padding: 0;}
+
+.favorite{overflow:scroll;position:fixed;width: 100%;height: 100vh;margin:0;display: none;background-color: white;z-index: 2;top:50px}
+.fav{width: 55%;font-size: 9vw;text-align: center;margin: 2% 0;}
+.freeFavorite{width: 100%;height:100%;font-size: 9vw;text-align: center;margin: 50% 0;}
+.hrFav{border: 0.9px solid rgba(0, 0, 0, 0.1);width: 90%;border-top: none;margin: 0 auto;}
+.favBox{width: 95vw;height: 25vw;position: relative;display: block;margin: 2.5% auto;}
+.favImg{width: 25vw;height: 25vw;background-size: contain;float: left;background-position: center;background-repeat: no-repeat;display: block;}
+.deleteFromFavorite{display: none;}
+.favName{font-size: 5vw;width:65vw;height: 50%;display: flex;} .favName p{margin: auto 0 auto 2%;}
+.favPrice{font-size: 4vw;margin: 0;width: 35vw;height: 50%;display: flex;float: left;} .favPrice p{margin: auto 0 auto 2%;}
+.deleteFromFavorite2{font-size: 4vw;margin: 0;width: 35vw;height: 50%;display:flex;float: right;} .deleteFromFavorite2 p{margin: auto 0;}
+.clearFavorite{cursor: pointer;height: 10%;font-size: 3vh;margin: 5% 0 50% 2%;}
+
+.favCount{display:none;width: 20px;height: 20px;margin: 25px 0 0 10%;text-align:center;border-radius: 100%;background-color: rgb(255,255,255);border: 0.5px solid rgba(0, 0, 0, 0.2);position: relative;}
+.basCount{display:none;width: 20px;height: 20px;margin: 40% 0 0 15%;text-align:center;border-radius: 100%;background-color: rgb(255,255,255);border: 0.5px solid rgba(0, 0, 0, 0.2);}
+
+}
+

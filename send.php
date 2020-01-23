@@ -1,11 +1,8 @@
 <?php 
-
 if(isset($_POST['submit'])){
-/* Устанавливаем e-mail Кому и от Кого будут приходить письма */   
-$to = "mosroses@mosroses.ru"; // Здесь нужно написать e-mail, куда будут приходить письма   
-$from = "mosroses@mosroses.ru"; // Здесь нужно написать e-mail, от кого будут приходить письма, например no-reply(собака)epicblog.net
+$to = "mosroses@mosroses.ru"; 
+$from = "mosroses@mosroses.ru"; 
  
-/* Указываем переменные, в которые будет записываться информация с формы */
 $first_name = $_POST['first_name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
@@ -15,7 +12,7 @@ $subject = "MosRoses";
      
      
 /* Переменная, которая будет отправлена на почту со значениями, вводимых в поля */
-$mail_to_myemail = "Чикс 
+$mail_to_myemail = "Чикс"
 Имя отправителя: $first_name
 E-mail: $email
 Номер телефона: $phone
